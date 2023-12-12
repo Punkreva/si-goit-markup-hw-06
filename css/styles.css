@@ -40,32 +40,55 @@ img {
   height: auto;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .container {
-  max-width: 1158px;
-  padding-left: 15px;
-  padding-right: 15px;
+  max-width: 320px;
+  padding-left: 16px;
+  padding-right: 16px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .section {
-  padding: 120px 0;
+  padding: 96px 0;
 }
 
-/* ===============================Header=============================== */
+/* ===============================  Mobile Header Styles  =============================== */
 
 .page-header {
-  border-bottom: 1px solid #e7e9fc;
-  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--CORNFLOWER, #e7e9fc);
+  box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 2px 1px 0px rgba(46, 47, 66, 0.08);
 }
 
 .page-header-container {
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
-/* ===============================Logo=============================== */
+.nav-list {
+  display: none;
+}
+
+.contacts {
+  display: none;
+}
 
 .logo-web-studio {
   color: #4d5ae5;
@@ -75,98 +98,28 @@ img {
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  margin-right: 76px;
+  /* margin-right: 149px; */
 }
 
 .logo-studio {
   color: #2e2f42;
 }
 
-/* ===============================Navigation=============================== */
-
-.nav {
-  display: flex;
-  align-items: center;
+.mobile-menu-open-btn {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  fill: #2f2f37;
+  line-height: 0;
 }
 
-.nav-list {
-  display: flex;
-}
+/* ===============================  /Mobile Header Styles  =============================== */
 
-.nav-list-item:not(:last-child) {
-  margin-right: 40px;
-}
+/* ================================  Mobile  Hero  Styles  =============================== */
 
-.nav-list-link {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  display: block;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  color: #2e2f42;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.nav-list-link:hover,
-.nav-list-link:focus,
-.nav-list-link:active {
-  color: #404bbf;
-}
-
-.underlined {
-  position: relative;
-  color: #404bbf;
-}
-
-.underlined::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-  display: block;
-  width: 100%;
-  height: 4px;
-  border-radius: 2px;
-  background-color: #404bbf;
-}
-
-/* ===============================Contacts=============================== */
-
-.contacts {
-  font-style: normal;
-}
-
-.contacts-list {
-  display: flex;
-}
-
-.contacts-list-item:not(:last-child) {
-  margin-right: 40px;
-}
-
-.contacts-list-link {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  display: block;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  color: #434455;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.contacts-list-link:hover,
-.contacts-list-link:focus {
-  color: #404bbf;
-}
-
-/* ===============================Hero=============================== */
 .hero-section {
-  max-width: 1440px;
-  padding: 188px 0;
+  max-width: 320px;
+  padding: 72px 0;
   margin: 0 auto;
   background-color: #2e2f42;
   background-image: linear-gradient(
@@ -174,10 +127,23 @@ img {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/hero-backgaround.jpg);
+    url(../images/hero-background-mobile.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+@media screen and (min-resolution: 192dpi) and (min-width: 320px),
+  screen and (min-resolution: 2dppx) and (min-width: 320px),
+  screen and (min-device-picel-ratio: 2) and (min-width: 320px) {
+  .hero-section {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero-background-mobile@2x.jpg);
+  }
 }
 
 .hero-container {
@@ -190,15 +156,13 @@ img {
 .hero-title {
   color: #fff;
   text-align: center;
-  font-size: 56px;
+  font-size: 36px;
   font-weight: 700;
-  line-height: 1.07;
+  line-height: 1.11;
   letter-spacing: 0.02em;
-  margin-bottom: 48px;
+  margin-bottom: 72px;
   max-width: 496px;
 }
-
-/* ===============================Hero-button=============================== */
 
 .hero-button {
   color: #fff;
@@ -207,7 +171,6 @@ img {
   line-height: 1.5;
   letter-spacing: 0.04em;
   background-color: #4d5ae5;
-  cursor: pointer;
   border-radius: 4px;
   display: block;
   min-width: 169px;
@@ -223,72 +186,46 @@ img {
   background-color: #404bbf;
 }
 
-/* ===============================Our-feature=============================== */
+/* ===============================  /Mobile Hero Styles  ====================================== */
+/* ===============================  Mobile Our Feature Styles  ================================ */
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+.our-future-icon {
+  display: none;
 }
 
 .our-feature-list {
   display: flex;
-  gap: 24px;
-}
-
-.our-feature-list-item {
-  flex-basis: calc((100% - 72px) / 4);
-}
-
-.our-future-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 112px;
-  background-color: #f4f4fd;
-  border: 1px solid #8e8f99;
-  border-radius: 4px;
-  margin-bottom: 8px;
+  flex-direction: column;
+  gap: 72px;
 }
 
 .our-feature-list-title {
   color: #2e2f42;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.2;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
   letter-spacing: 0.02em;
   margin-bottom: 8px;
+  text-align: center;
 }
 
 .our-feature-list-text {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
 }
-
-/* ===============================Our-team=============================== */
+/* ===============================  /Mobile Our Feature Styles  =============================== */
+/* ===============================    Mobile Our-team Styles    =============================== */
 
 .our-team-section {
   background-color: #f4f4fd;
 }
 
-.our-team-list {
-  display: flex;
-  gap: 24px;
-}
-
 .our-team-title {
   color: #2e2f42;
   text-align: center;
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 700;
   line-height: 1.11;
   letter-spacing: 0.02em;
@@ -296,9 +233,16 @@ img {
   margin-bottom: 72px;
 }
 
+.our-team-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 72px;
+}
+
 .our-team-list-item {
   background-color: #ffffff;
-  width: calc((100% - 72px) / 4);
+  /* width: calc((100% - 72px) / 4); */
   border-radius: 0px 0px 4px 4px;
   box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
     0px 1px 1px 0px rgba(46, 47, 66, 0.16),
@@ -326,7 +270,7 @@ img {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
-  letter-spacing: 00.02em;
+  letter-spacing: 0.02em;
   margin-bottom: 8px;
 }
 
@@ -358,7 +302,9 @@ img {
 .social-list-link:focus {
   background-color: #404bbf;
 }
-/* ===============================Our-portfolio-list=============================== */
+
+/* ===============================   /Mobile Our-team Styles    =============================== */
+/* ===============================  Mobile Our-Portfolio Styles    =============================== */
 
 .our-portfolio-title {
   color: #2e2f42;
@@ -373,13 +319,12 @@ img {
 
 .our-portfolio-list {
   display: flex;
-  flex-wrap: wrap;
-  column-gap: 24px;
-  row-gap: 48px;
+  flex-direction: column;
+  gap: 48px;
 }
 
 .our-portfolio-list-item {
-  width: calc((100% - 48px) / 3);
+  /* width: calc((100% - 48px) / 3); */
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -436,12 +381,11 @@ img {
 .our-portfolio-list-item:focus .our-portfolio-images-top {
   transform: translateY(0%);
 }
-
-/* ===============================Footer=============================== */
-
+/* ===============================  Mobile Our-Portfolio Styles    =============================== */
+/* =================================   Mobile Footer Styles    =================================== */
 .page-footer {
   background-color: #2e2f42;
-  padding: 100px 0;
+  padding: 96px 0;
 }
 
 .footer-logo-web-studio {
@@ -454,6 +398,7 @@ img {
   text-transform: uppercase;
   display: inline-block;
   margin-bottom: 16px;
+  text-align: center;
 }
 
 .footer-logo-studio {
@@ -465,23 +410,25 @@ img {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  max-width: 264px;
+  max-width: 288px;
 }
 
 .footer-container {
   display: flex;
-  align-items: baseline;
+  flex-direction: column;
+  align-items: center;
 }
 
 .footer-container-text-logo {
-  margin-right: 120px;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 72px;
 }
 
 .footer-social-conteiner {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  margin-bottom: 72px;
 }
 
 .footer-soc-med {
@@ -491,6 +438,7 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   margin-bottom: 16px;
+  text-align: center;
 }
 
 .footer-social-list {
@@ -522,24 +470,21 @@ img {
   background-color: #31d0aa;
 }
 
-/* ======================= Footer form ====================== */
+/* ================================= Footer form ============================== */
 .footer-form-discription {
   color: #fff;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  text-align: center;
   margin-bottom: 16px;
-}
-
-.footer-form {
-  margin-left: 80px;
 }
 
 .footer-form-subscribe {
   display: flex;
-  align-items: baseline;
-  gap: 24px;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .footer-form-input {
@@ -563,7 +508,7 @@ img {
 }
 
 .footer-form-btn {
-  min-width: 165px;
+  max-width: 165px;
   color: #fff;
   text-align: center;
   font-size: 16px;
@@ -577,7 +522,8 @@ img {
   border-radius: 4px;
   border: none;
   background: #4d5ae5;
-
+  margin-right: auto;
+  margin-left: auto;
   cursor: pointer;
 }
 
@@ -585,7 +531,134 @@ img {
   fill: #ffffff;
   margin-left: 16px;
 }
-/* ======================= Backdrop ====================== */
+/* =================================   Mobile Footer Styles    =================================== */
+/* ================================ Mobile Menu Wrapper Styles =================================== */
+
+.mobile-menu-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999999;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+
+  transform: translateX(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu-wrapper.is-open {
+  transform: translateX(0%);
+}
+
+.mobile-menu-container {
+  position: relative;
+  padding: 72px 8px 40px 16px;
+}
+
+.mobile-menu-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 16px;
+  background-color: transparent;
+  padding: 0;
+  fill: #2f2f37;
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu-close-btn:active {
+  background-color: #404bbf;
+  border: none;
+  fill: #ffffff;
+}
+
+.mobile-menu-nav {
+  margin-bottom: 168px;
+}
+
+.mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.mobile-nav-list-link {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  /* display: block; */
+  /* padding-top: 20px; */
+  /* padding-bottom: 20px; */
+  color: #2e2f42;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-nav-list-link:active {
+  color: #404bbf;
+}
+.mobile-contacts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.mobile-contacts-list-link {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  /* display: block; */
+  /* padding-top: 24px; */
+  /* padding-bottom: 24px; */
+  color: #434455;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-contacts-list-link:active {
+  color: #4d5ae5;
+}
+
+.mobile-social-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.mobile-social-list-item {
+  width: 40px;
+  height: 40px;
+}
+
+.mobile-social-list-link {
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  fill: #f4f4fd;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-social-list-link:active {
+  background-color: #404bbf;
+}
+/* ===============================  /Mobile Menu Wrapper Styles  =============================== */
+/* ================================== Mobile Backdrop Styles =================================== */
 
 .backdrop {
   position: fixed;
@@ -607,23 +680,22 @@ img {
   visibility: visible;
   pointer-events: auto;
 }
-
-/* ======================= Modal ====================== */
+/* ================================== /Mobile Backdrop Styles ================================== */
+/* =================================== Mobile Modal Styles ====================================== */
 
 .modal {
-  width: 408px;
-  min-height: 584px;
+  width: 288px;
+  min-height: 653px;
   border-radius: 4px;
   background-color: #fcfcfc;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 72px 24px 24px 24px;
+  padding: 72px 16px 24px 16px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 72px 24px 24px 24px;
 }
 
 .modal-close-btn {
@@ -640,13 +712,11 @@ img {
   position: absolute;
   top: 24px;
   right: 24px;
-  cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-close-btn:hover,
-.modal-close-btn:focus {
+.modal-close-btn:active {
   background-color: #404bbf;
   border: none;
   fill: #ffffff;
@@ -655,10 +725,10 @@ img {
 .modal-close-btn-icon {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+/* ================================== Mobile Form Modal Styles ===================================== */
 
-/* ======================= Form modal ====================== */
 .review-form-description {
-  width: 360px;
+  width: 256px;
   color: #2e2f42;
   text-align: center;
   font-size: 16px;
@@ -740,7 +810,7 @@ img {
   border-color: #4d5ae5;
 }
 
-/* ======================= Checkbox ====================== */
+/* =========================================== Mobile Checkbox Styles =============================== */
 
 .review-form-checkbox-wrapper {
   margin-bottom: 24px;
@@ -758,7 +828,6 @@ img {
   height: 16px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 2px;
-  cursor: pointer;
   margin-right: 8px;
   fill: transparent;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -802,7 +871,8 @@ img {
 }
 .review-form-submit-btn {
   display: block;
-  margin-left: 96px;
+  margin-left: auto;
+  margin-right: auto;
   min-width: 169px;
   height: 56px;
   font-family: 'Roboto', sans-serif;
@@ -811,7 +881,6 @@ img {
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: #ffffff;
-  cursor: pointer;
   background-color: #4d5ae5;
   border: none;
   border-radius: 4px;
@@ -819,8 +888,7 @@ img {
   outline: 0px solid transparent;
 }
 
-.review-form-submit-btn:active,
-.review-form-submit-btn:focus {
+.review-form-submit-btn:active {
   background-color: #404bbf;
 }
 
@@ -832,4 +900,383 @@ img {
   letter-spacing: 0.04em;
   text-decoration-line: underline;
   outline: 0px solid transparent;
+  margin-left: 24px;
 }
+/* ===============================  /Mobile Modal Window Styles   =============================== */
+
+/* ===============================  Tablet Styles  =============================== */
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+  /* ===============================  Tablet Header Styles  =============================== */
+  .page-header {
+    padding-bottom: 0;
+  }
+
+  .mobile-menu-open-btn {
+    display: none;
+  }
+
+  .mobile-menu-wrapper {
+    display: none;
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-web-studio {
+    margin-right: 120px;
+  }
+
+  .nav-list {
+    display: flex;
+  }
+
+  .nav-list-item:not(:last-child) {
+    margin-right: 40px;
+  }
+
+  .nav-list-link {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    display: block;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    color: #2e2f42;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav-list-link:hover,
+  .nav-list-link:focus,
+  .nav-list-link:active {
+    color: #404bbf;
+  }
+
+  .underlined {
+    position: relative;
+    color: #404bbf;
+  }
+
+  .underlined::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #404bbf;
+  }
+
+  .contacts {
+    display: flex;
+    font-style: normal;
+  }
+
+  .contacts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .contacts-list-link {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.16;
+    letter-spacing: 0.02em;
+    display: block;
+    /* padding-top: 24px; */
+    /* padding-bottom: 24px; */
+    color: #434455;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .contacts-list-link:hover,
+  .contacts-list-link:focus {
+    color: #404bbf;
+  }
+  /* ===============================  /Tablet Header Styles  =============================== */
+  /* ===============================  /Tablet Hero Styles  ================================= */
+  .hero-section {
+    max-width: 768px;
+    padding: 112px 0;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero-background-tablet.jpg);
+  }
+
+  .hero-title {
+    font-size: 56px;
+    line-height: 1.07;
+    margin-bottom: 36px;
+  }
+  /* ===============================  /Tablet Hero Styles  =============================== */
+  /* ============================ Tablet Our Feature Styles ============================= */
+  .our-feature-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 72px;
+    column-gap: 24px;
+  }
+
+  .our-feature-list-title {
+    text-align: start;
+  }
+
+  .our-feature-list-text {
+    width: 356px;
+  }
+  /* ============================ /Tablet Our Feature Styles =========================== */
+  /* ============================ Tablet Our Team Styles =============================== */
+  .our-team-title {
+    font-size: 36px;
+  }
+
+  .our-team-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 64px;
+    column-gap: 24px;
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    padding: 32px 0;
+  }
+
+  /* ============================ /Tablet Our Team Styles ============================== */
+  /* ============================ Tablet Our Portfolio Styles ============================== */
+
+  .our-portfolio-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 104px;
+    column-gap: 24px;
+  }
+  /* ============================ /Tablet Our Portfolio Styles ============================== */
+  /* ============================ Tablet Foooter Styles ============================== */
+  .page-footer {
+    padding-left: 108px;
+  }
+  .footer-logo-web-studio {
+    text-align: start;
+  }
+
+  .footer-text {
+    max-width: 264px;
+  }
+
+  .footer-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 72px;
+    align-items: flex-start;
+  }
+
+  .footer-container-text-logo {
+    margin-bottom: 0;
+  }
+
+  .footer-social-conteiner {
+    margin-bottom: 0;
+  }
+
+  .footer-soc-med {
+    text-align: start;
+  }
+
+  .footer-form-discription {
+    text-align: start;
+  }
+
+  .footer-form-subscribe {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  /* ============================ /Tablet Foooter Styles ===================================== */
+  /* ===============================  /Tablet Modal Styles  =============================== */
+  .modal {
+    width: 408px;
+    min-height: 584px;
+    padding: 72px 25px 24px 23px;
+  }
+
+  .review-form-description {
+    width: 360px;
+  }
+
+  .review-form-checkbox-link {
+    margin-left: 0;
+  }
+  /* ===============================  /Tablet Modal Styles  =============================== */
+}
+/* ===============================  Tablet Resolution Styles  =============================== */
+
+@media screen and (min-resolution: 192dpi) and (min-width: 768px),
+  screen and (min-resolution: 2dppx) and (min-width: 768px),
+  screen and (min-device-picel-ratio: 2) and (min-width: 768px) {
+  .hero-section {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero-background-tablet@2x.jpg);
+  }
+}
+
+/* ===============================  /Tablet Resolution Styles  =============================== */
+/* ===============================  /Tablet Styles  =============================== */
+
+/* ===============================  Desktop Styles  =============================== */
+
+@media screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .section {
+    padding: 120px 0;
+  }
+
+  /* ===============================  Desktop Header Styles  =============================== */
+  .page-header {
+    padding-top: 0;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+      0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+  }
+
+  .logo-web-studio {
+    margin-right: 76px;
+  }
+
+  .contacts-list {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .contacts-list-item:not(:last-child) {
+    margin-right: 40px;
+  }
+
+  .contacts-list-link {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    display: block;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    color: #434455;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* =============================== /Desktop Header Styles  =============================== */
+  /* ===============================  Desktop Hero Styles == =============================== */
+
+  .hero-section {
+    max-width: 1440px;
+    padding: 188px 0;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero-background-desktop.jpg);
+  }
+
+  .hero-title {
+    margin-bottom: 48px;
+  }
+
+  .hero-button {
+    cursor: pointer;
+  }
+  /* =============================== /Desktop Hero Styles  =============================== */
+  /* ===============================  Desktop Our Feature Styles  ======================== */
+  .our-feature-list {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+
+  .our-feature-list-item {
+    flex-basis: calc((100% - 72px) / 4);
+  }
+  .our-future-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 112px;
+    background-color: #f4f4fd;
+    border: 1px solid #8e8f99;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  .our-feature-list-title {
+    font-size: 20px;
+    font-weight: 500;
+    text-align: start;
+  }
+
+  .our-feature-list-text {
+    font-weight: 400;
+    width: 264px;
+  }
+  /* =============================== /Desktop Our Feature Styles  ======================== */
+  /* =============================== Desktop Our Team Styles  ======================== */
+
+  /* =============================== /Desktop Our Team Styles  ======================== */
+  /* =============================== Desktop Our Portfolio Styles  ======================== */
+
+  /* =============================== /Desktop Our Portfolio Styles  ======================== */
+  /* =============================== Desktop Our Footer Styles  ======================== */
+  .page-footer {
+    padding: 100px 0;
+  }
+  .footer-container {
+    flex-wrap: nowrap;
+    column-gap: 0px;
+  }
+  .footer-container-text-logo {
+    margin-right: 120px;
+  }
+  .footer-social-conteiner {
+    margin-right: 80px;
+  }
+  /* =============================== /Desktop Our Footer Styles  ======================== */
+  /* =============================== Desktop Our Modal Styles  ======================== */
+  .modal {
+    padding: 72px 24px 24px 24px;
+  }
+  /* =============================== /Desktop Our Modal Styles  ======================== */
+}
+/* =============================== /Desktop Resulution Styles  =========================== */
+@media screen and (min-resolution: 192dpi) and (min-width: 1158px),
+  screen and (min-resolution: 2dppx) and (min-width: 1158px),
+  screen and (min-device-picel-ratio: 2) and (min-width: 1158px) {
+  .hero-section {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero-background-desktop@2x.jpg);
+  }
+}
+/* =============================== /Desktop Resulution Styles ============================= */
+/* ===============================  /Desktop Header Styles  =============================== */
