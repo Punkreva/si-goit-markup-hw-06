@@ -156,12 +156,12 @@ img {
 .hero-title {
   color: #fff;
   text-align: center;
-  font-size: 36px;
+  font-size: 56px;
   font-weight: 700;
   line-height: 1.11;
   letter-spacing: 0.02em;
   margin-bottom: 72px;
-  max-width: 496px;
+  max-width: 288px;
 }
 
 .hero-button {
@@ -176,6 +176,7 @@ img {
   min-width: 169px;
   height: 56px;
   border: none;
+  cursor: pointer;
   padding: 16px 32px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -535,6 +536,7 @@ img {
 /* ================================ Mobile Menu Wrapper Styles =================================== */
 
 .mobile-menu-wrapper {
+  display: flex;
   position: fixed;
   top: 0;
   left: 0;
@@ -553,7 +555,11 @@ img {
 
 .mobile-menu-container {
   position: relative;
-  padding: 72px 8px 40px 16px;
+  padding: 72px 24px 40px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* gap: 148px; */
 }
 
 .mobile-menu-close-btn {
@@ -580,10 +586,6 @@ img {
   background-color: #404bbf;
   border: none;
   fill: #ffffff;
-}
-
-.mobile-menu-nav {
-  margin-bottom: 168px;
 }
 
 .mobile-nav-list {
@@ -656,6 +658,10 @@ img {
 
 .mobile-social-list-link:active {
   background-color: #404bbf;
+}
+
+.accent-mobile {
+  color: #404bbf;
 }
 /* ===============================  /Mobile Menu Wrapper Styles  =============================== */
 /* ================================== Mobile Backdrop Styles =================================== */
@@ -814,6 +820,7 @@ img {
 
 .review-form-checkbox-wrapper {
   margin-bottom: 24px;
+  display: flex;
 }
 
 .review-form-wrapper {
@@ -861,8 +868,13 @@ img {
   .review-form-own-checkbox-icon {
   opacity: 1;
 }
+.paragrapf-privacy-policy {
+  max-width: 231px;
+}
 
 .review-form-checkbox-label {
+  display: flex;
+  align-items: center;
   color: #8e8f99;
   font-size: 12px;
   font-weight: 400;
@@ -900,7 +912,7 @@ img {
   letter-spacing: 0.04em;
   text-decoration-line: underline;
   outline: 0px solid transparent;
-  margin-left: 24px;
+  /* margin-left: 24px; */
 }
 /* ===============================  /Mobile Modal Window Styles   =============================== */
 
@@ -912,6 +924,7 @@ img {
   }
   /* ===============================  Tablet Header Styles  =============================== */
   .page-header {
+    padding-top: 0;
     padding-bottom: 0;
   }
 
@@ -1015,9 +1028,9 @@ img {
   }
 
   .hero-title {
-    font-size: 56px;
     line-height: 1.07;
     margin-bottom: 36px;
+    max-width: 496px;
   }
   /* ===============================  /Tablet Hero Styles  =============================== */
   /* ============================ Tablet Our Feature Styles ============================= */
@@ -1120,6 +1133,9 @@ img {
 
   .review-form-checkbox-link {
     margin-left: 0;
+  }
+  .paragrapf-privacy-policy {
+    max-width: 338px;
   }
   /* ===============================  /Tablet Modal Styles  =============================== */
 }
@@ -1242,7 +1258,9 @@ img {
 
   /* =============================== /Desktop Our Team Styles  ======================== */
   /* =============================== Desktop Our Portfolio Styles  ======================== */
-
+  .our-portfolio-list {
+    row-gap: 48px;
+  }
   /* =============================== /Desktop Our Portfolio Styles  ======================== */
   /* =============================== Desktop Our Footer Styles  ======================== */
   .page-footer {
